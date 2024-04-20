@@ -27,13 +27,7 @@ namespace codefirst_lehabinh.Controllers
 
                 foreach (var sinhvien in sinhviens)
                 {
-                    string tenKhoa = string.Empty; // Mặc định là chuỗi rỗng
-
-                    // Kiểm tra xem đối tượng Lop và Khoa có tồn tại không trước khi truy cập
-                    if (sinhvien.Lop != null && sinhvien.Lop.Khoa != null)
-                    {
-                        tenKhoa = sinhvien.Lop.Khoa.TenKhoa; // Truy cập tên khoa
-                    }
+                    
 
                     var SinhvienViewModel = new SinhVienViewModel()
                     {
@@ -41,7 +35,7 @@ namespace codefirst_lehabinh.Controllers
                         Ten = sinhvien.Ten,
                         Tuoi = sinhvien.Tuoi,
                         LopId = sinhvien.LopId,
-                        TenKhoa = tenKhoa,
+                      
                     };
                     sinhvienlist.Add(SinhvienViewModel);
                 }
